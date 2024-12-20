@@ -3,13 +3,14 @@ module.exports = {
 	theme: {
 	  extend: {
 		colors: {
-		  'brand-accent': '#1A95A4', // Define your brand colors here
-		  'brand-secondary': '#5e4b42',
-		  'brand-divider': '#8B5E34',
+		  'brand-accent': '#1A95A4',      // Primary brand color
+		  'brand-secondary': '#5e4b42',   // Secondary brand color
+		  'brand-divider': '#8B5E34',     // Divider color
+		  'brand-hover': '#147e7d',       // Hover color for interactive elements
 		},
 		fontFamily: {
-		  serif: ['Playfair Display', 'serif'],
-		  sans: ['Sansita One', 'sans-serif'],
+		  sans: ['Inter', 'sans-serif'],           // Modern sans-serif font
+		  serif: ['Merriweather', 'serif'],        // Elegant serif font
 		},
 	  },
 	},

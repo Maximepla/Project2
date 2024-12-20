@@ -40,8 +40,8 @@ const categories: Category[] = [
     key: "patisseries",
     icon: "/icons/cake.svg",
     products: [
-      { src: "/images/patisserie1.jpg", alt: "Tarte aux fraises", name: "Tarte aux fraises" },
-      { src: "/images/patisserie2.jpg", alt: "Éclair au chocolat", name: "Éclair au chocolat" },
+      { src: "/images/patisserie1.jpg", alt: "Beignet", name: "Tarte aux fraises" },
+      { src: "/images/patisserie2.jpg", alt: "Gâteau d'anniversaire", name: "Éclair au chocolat" },
       { src: "/images/patisserie3.jpg", alt: "Mille-feuille", name: "Mille-feuille" }
     ]
   }
@@ -49,10 +49,10 @@ const categories: Category[] = [
 
 let selectedCategoryKey = "patisseries";
 ---
-<section class="products-section py-16 px-4">
+<section class="products-section bg-[#fdfaf5] py-16 px-4">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-serif font-bold text-[#5e4b42] mb-4 text-center">Nos Produits</h2>
-    <div class="w-16 h-1 bg-[#8B5E34] mx-auto mb-8"></div>
+    <div class="w-16 h-1 bg-teal-500 mx-auto mb-8"></div>
 
     <!-- Category Tabs -->
     <div class="flex items-center justify-center space-x-8 mb-10">

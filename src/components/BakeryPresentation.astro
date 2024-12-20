@@ -1,26 +1,8 @@
 ---
-interface Image {
-  src: string;
-  alt: string;
-  caption: string;
-}
-
-const images: Image[] = [
-  {
-    src: '/images/bakery-exterior.jpg',
-    alt: 'Extérieur de la boulangerie',
-    caption: 'Notre façade traditionnelle, un repère local'
-  },
-  {
-    src: '/images/patisseries-artisanales.jpg',
-    alt: 'Pâtisseries artisanales',
-    caption: 'Pâtisseries artisanales, plaisir des sens'
-  },
-  {
-    src: '/images/seating-area.jpg',
-    alt: 'Espace de dégustation',
-    caption: 'Espace de dégustation, moment de détente'
-  }
+const images = [
+  { src: "/images/bakery-exterior.jpg", alt: "Extérieur de la boulangerie" },
+  { src: "/images/patisseries-artisanales.jpg", alt: "Pâtisseries artisanales" },
+  { src: "/images/seating-area.jpg", alt: "Espace de dégustation" }
 ];
 
 const mainImage = images[0];
@@ -41,7 +23,7 @@ const mainImage = images[0];
       <div class="flex-1">
         <div class="relative">
           <img id="mainImage" src={mainImage.src} alt={mainImage.alt} class="w-full rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105" />
-          <p id="mainCaption" class="text-center text-sm text-[#5e4b42] mt-2">{mainImage.caption}</p>
+          <p id="mainCaption" class="text-center text-sm text-[#5e4b42] mt-2">{mainImage.alt}</p>
         </div>
       </div>
     </div>

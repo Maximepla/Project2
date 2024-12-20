@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const { images, interval } = config;
   const heroBg = document.getElementById('hero-bg');
-  const nextBtn = document.getElementById('hero-next');
-  const prevBtn = document.getElementById('hero-prev');
 
-  if (!heroBg || !nextBtn || !prevBtn || !Array.isArray(images) || images.length === 0) {
+  if (!heroBg || !Array.isArray(images) || images.length === 0) {
     console.error('Missing hero elements or images.');
     return;
   }
@@ -42,23 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       updateImage();
     }, interval);
   }
-
-  function resetTimer() {
-    clearInterval(timer);
-    startTimer();
-  }
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateImage();
-    resetTimer();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateImage();
-    resetTimer();
-  });
 
   // Initialize
   updateImage();

@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
       key: "patisseries",
       icon: "/icons/cake.svg",
       products: [
-        { src: "/images/patisserie1.jpg", alt: "Tarte aux fraises", name: "Tarte aux fraises" },
-        { src: "/images/patisserie2.jpg", alt: "Éclair au chocolat", name: "Éclair au chocolat" },
-        { src: "/images/patisserie3.jpg", alt: "Mille-feuille", name: "Mille-feuille" }
+        { src: "/images/patisserie1.jpg", alt: "Beignet", name: "Beignet" },
+        { src: "/images/patisserie2.jpg", alt: "Éclair au chocolat", name: "Gâteau d'anniversaire" },
+        { src: "/images/patisserie3.jpg", alt: "Mille-feuille", name: "Gâteau" }
       ]
     }
   ];
