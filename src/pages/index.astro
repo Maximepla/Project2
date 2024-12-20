@@ -1,11 +1,31 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProductsSection from '../components/ProductsSection.astro';
+import BakeryPresentation from '../components/BakeryPresentation.astro';
+import BakerSection from '../components/BakerSection.astro';
+import LocationSection from '../components/LocationSection.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+const heroImages = [
+  "/images/hero1.jpg",
+  "/images/hero2.jpg",
+  "/images/hero3.jpg"
+];
+
+const aboutTitle = "Bien plus qu'une boulangerie";
+const aboutText = "Votre boulangerie artisanale, un lieu chaleureux, où chaque pain raconte une histoire de passion et de savoir-faire.";
+const aboutImage = "/images/bakery-interior.jpg";
+const aboutCTA = "En savoir plus";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Boulangerie Jouvenceaux">
+  <Hero images={heroImages} rotationInterval={5000} />
+
+  <BakeryPresentation />
+  <ProductsSection />
+  <BakerSection />
+  <LocationSection />
+
+  <!-- Add more sections if needed, following the same pattern -->
+</BaseLayout>

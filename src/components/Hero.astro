@@ -1,0 +1,42 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  cta?: string;
+  ctaLink?: string;
+  images?: string[];
+  rotationInterval?: number;
+}
+
+const {
+  title = "Boulangerie Jouvenceaux",
+  subtitle = "Artisanale et de qualité",
+  cta = "Découvrir",
+  ctaLink = "#",
+  images = ["/images/hero1.jpg", "/images/hero2.jpg", "/images/hero3.jpg"],
+  rotationInterval = 5000
+} = Astro.props as Props;
+
+const firstImage = images[0];
+---
+<section class="relative w-full h-screen overflow-hidden flex items-center justify-center">
+  <div id="hero-bg" class="absolute inset-0 bg-cover bg-center transition-opacity duration-500" style={`background-image: url('${firstImage}')`}></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-gray-900 via-transparent to-gray-900 opacity-70"></div>
+  <div class="relative z-10 text-center p-4 text-white font-serif">
+    {title && <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">{title}</h1>}
+    {subtitle && <p class="text-xl md:text-2xl mb-6 drop-shadow">{subtitle}</p>}
+    {cta && <a href={ctaLink} class="inline-block bg-teal-500 hover:bg-teal-600 text-white font-medium py-3 px-6 rounded-full transition transform hover:scale-105">{cta}</a>}
+  </div>
+  <button id="hero-prev" class="absolute left-4 md:left-8 transform -translate-y-1/2 top-1/2 bg-teal-500 hover:bg-teal-600 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition">
+    &#8249;
+  </button>
+  <button id="hero-next" class="absolute right-4 md:right-8 transform -translate-y-1/2 top-1/2 bg-teal-500 hover:bg-teal-600 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition">
+    &#8250;
+  </button>
+
+  <!-- Hidden JSON for configuration -->
+  <script type="application/json" id="hero-images-config">
+    { JSON.stringify({ images, interval: rotationInterval }) }
+  </script>
+  <script src="/scripts/hero-rotation.js" type="module" defer></script>
+</section>

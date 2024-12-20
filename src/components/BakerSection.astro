@@ -1,0 +1,44 @@
+---
+const images = [
+  { src: "/images/baker1.jpg", alt: "Boulanger au travail" },
+  { src: "/images/baker2.jpg", alt: "Sélection de pains" },
+  { src: "/images/baker3.jpg", alt: "Notre boulanger avec son prix" }
+];
+
+const mainImage = images[0];
+---
+<section class="bg-[#f4f0e4] py-16 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col gap-12">
+    <div class="text-center">
+      <h2 class="text-3xl font-serif font-bold text-[#5e4b42] mb-4">Notre Boulanger</h2>
+      <div class="w-16 h-1 bg-teal-500 mx-auto"></div>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="flex-1">
+        <p class="text-[#5e4b42] text-lg leading-relaxed mb-6">
+          Rencontrez notre boulanger, un artisan passionné perpétuant les traditions boulangères avec fierté. Son dévouement et son expertise garantissent des produits de qualité supérieure, appréciés par toute la communauté.
+        </p>
+      </div>
+      <div class="flex-1">
+        <div class="relative">
+          <img id="bakerMain" src={mainImage.src} alt={mainImage.alt} class="w-full rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105" />
+          <p id="bakerCaption" class="text-center text-sm text-[#5e4b42] mt-2">{mainImage.alt}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      {images.map((img, index) => (
+        <div 
+          class={`baker-thumbnail-card cursor-pointer border-2 ${index === 0 ? 'border-teal-500' : 'border-transparent'} rounded-lg overflow-hidden transform transition-transform duration-300 hover:border-teal-500 hover:scale-105`}
+          data-index={index}
+        >
+          <img src={img.src} alt={img.alt} class="w-24 h-16 object-cover" />
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script src="/scripts/updateBakerImage.js" type="module" defer></script>
+</section>

@@ -1,0 +1,62 @@
+---
+interface Image {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+const images: Image[] = [
+  {
+    src: '/images/bakery-exterior.jpg',
+    alt: 'Extérieur de la boulangerie',
+    caption: 'Notre façade traditionnelle, un repère local'
+  },
+  {
+    src: '/images/patisseries-artisanales.jpg',
+    alt: 'Pâtisseries artisanales',
+    caption: 'Pâtisseries artisanales, plaisir des sens'
+  },
+  {
+    src: '/images/seating-area.jpg',
+    alt: 'Espace de dégustation',
+    caption: 'Espace de dégustation, moment de détente'
+  }
+];
+
+const mainImage = images[0];
+---
+<section class="bg-[#f7f3e8] py-16 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col gap-12">
+    <div class="text-center">
+      <h2 class="text-3xl font-serif font-bold text-[#5e4b42] mb-4">Notre Boulangerie</h2>
+      <div class="w-16 h-1 bg-teal-500 mx-auto"></div>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="flex-1">
+        <p class="text-[#5e4b42] text-lg leading-relaxed mb-6">
+          Bienvenue chez Boulangerie Jouvenceaux, où tradition et passion se rencontrent pour vous offrir des produits de boulangerie et pâtisserie d'exception. Chaque jour, notre équipe dévouée s'efforce de créer des délices qui éveillent les sens et réchauffent le cœur.
+        </p>
+      </div>
+      <div class="flex-1">
+        <div class="relative">
+          <img id="mainImage" src={mainImage.src} alt={mainImage.alt} class="w-full rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105" />
+          <p id="mainCaption" class="text-center text-sm text-[#5e4b42] mt-2">{mainImage.caption}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      {images.map((img, index) => (
+        <div 
+          class={`thumbnail-card cursor-pointer border-2 ${index === 0 ? 'border-teal-500' : 'border-transparent'} rounded-lg overflow-hidden transform transition-transform duration-300 hover:border-teal-500 hover:scale-105`}
+          data-index={index}
+        >
+          <img src={img.src} alt={img.alt} class="w-24 h-16 object-cover" />
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script src="/scripts/updateMainImage.js" type="module" defer></script>
+</section>
